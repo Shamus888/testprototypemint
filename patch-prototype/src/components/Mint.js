@@ -30,9 +30,9 @@ function Mint(props) {
                     <h3>Whitelist Mint</h3>
                     <button
                         onClick={mintWhitelist}
-                        style={{width: "80%", height: "50px", marginLeft: "10%", backgroundColor: "skyblue"}}
+                        style={{width: "80%", height: "50px", marginLeft: "10%", backgroundColor: "#00dbff", borderRadius: "10px"}}
                     >
-                        Mint
+                        <h3 style={{color: "black"}}>Mint</h3>
                     </button>
                 </div>
             }
@@ -71,12 +71,13 @@ function Mint(props) {
                             width: "80%",
                             height: "50px",
                             marginLeft: "10%",
-                            backgroundColor: "skyblue",
-                            marginTop: "5%"
+                            backgroundColor: "#00dbff",
+                            marginTop: "5%",
+                            borderRadius: "10px"
                         }}
                         onClick={mintPublic}
                     >
-                        Mint
+                        <h3 style={{color: "black"}}>Mint</h3>
                     </button>
                 </div>
             }
@@ -96,7 +97,7 @@ const styles = {
     },
     div2: {display: "flex", margin: "5%", flexDirection: "column", width: "50%"},
     div3: {display: "flex", flexDirection: "row", justifyContent: "space-around"},
-    btn: {width: "50px", height: "50px"}
+    btn: {width: "25px", height: "25px", marginTop: "20px"}
 };
 
 export default Mint;

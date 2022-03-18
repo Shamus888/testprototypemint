@@ -55,7 +55,7 @@ function Home() {
 
             setupContracts();
         },
-        [dappState, walletState]
+        [] // eslint-disable-line react-hooks/exhaustive-deps
     );
 
     return (

@@ -55,13 +55,13 @@ function Home() {
 
             setupContracts();
         },
-        []
+        [dappState, walletState]
     );
 
     return (
         <div>
             <div style={{marginTop: "5%"}}>
-                <img src={logo} style={{width: "40%", height: "20%"}}/>
+                <img src={logo} style={{width: "40%", height: "20%"}} alt=""/>
             </div>
             <div style={{
                 display: "flex",
@@ -76,7 +76,6 @@ function Home() {
                     dappState={dappState}
                     walletState={walletState}
                 />
-                // Render a YouTube video player
                 <ReactPlayer
                     url={REACT_APP_VIDEO_URL}
                     loop={true}

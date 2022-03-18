@@ -83,6 +83,7 @@ function Home() {
                     muted={true}
                 />
             </div>
+            <div><h4>Connected: {walletState.walletAddress}</h4></div>
         </div>
     );
 }

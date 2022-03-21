@@ -7,6 +7,16 @@ function Mint(props) {
     const mintWhitelist = async () => {
         const {nft} = props.dappState;
         const price = await nft.methods.getPrice().call();
+        
+        try {
+            await nft.methods.whitelistMint().estimateGas({
+                from: props.walletState.walletAddress,
+                value: price
+            });         
+        } catch (err) { 
+            return alert("Please make sure you have enough funds");
+        }
+        
         await nft.methods.whitelistMint().send({
             from: props.walletState.walletAddress,
             value: price
@@ -16,6 +26,15 @@ function Mint(props) {
     const mintPublic = async () => {
         const {nft} = props.dappState;
         const price = await nft.methods.getPrice().call();
+        
+        try {
+            await nft.methods.publicMint(patchNum).estimateGas({
+                from: props.walletState.walletAddress,
+                value: BigNumber.from(price).mul(BigNumber.from(patchNum))
+            });
+        } catch (err) { 
+            return alert("Please make sure you have enough funds");
+        }        
         await nft.methods.publicMint(patchNum).send({
             from: props.walletState.walletAddress,
             value: BigNumber.from(price).mul(BigNumber.from(patchNum))
